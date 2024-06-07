@@ -7,6 +7,73 @@ wIcon = document.querySelector(".weather-part img")
 arrowBack = document.querySelector("header i")
 let api;
 
+document.body.onload = function () {
+    let rightNow = new Date();
+    let hour = rightNow.getHours();
+    let body = document.body
+
+    if (hour >= 6 && hour < 10) {
+        changeToSunRiseTheme()
+        body.style.backgroundImage = "url(./images/sunRise.jpg)";
+    }
+    else if (hour >= 10 && hour < 16) {
+        changeToDayTheme()
+        body.style.backgroundImage = "url(./images/day.jpg)";
+    }
+    else if (hour >= 16 && hour < 20) {
+        changeToSunsetTheme()
+        body.style.backgroundImage = "url(./images/sunset.jpg)";
+    }
+    else if (hour >= 20 || hour < 6) {
+        changeToNightTheme()
+        body.style.backgroundImage = "url(./images/evening.jpg)";
+    }
+
+}
+
+function changeToNightTheme() {
+    let wrapper = document.getElementById("wrapper");
+    let title = document.getElementById("header");
+    let button = document.getElementById("button");
+    wrapper.style.backgroundColor = "#240340"
+    wrapper.style.borderColor = "black"
+    wrapper.style.color = "white"
+    title.style.color = "white"
+    button.style.backgroundColor = "#B49ACA"
+}
+function changeToDayTheme() {
+    let wrapper = document.getElementById("wrapper");
+    let title = document.getElementById("header");
+    let button = document.getElementById("button");
+    wrapper.style.backgroundColor = "white"
+    wrapper.style.borderColor = "#00d9ff"
+    wrapper.style.color = "#00d9ff"
+    title.style.color = "#00d9ff"
+    button.style.backgroundColor = "#00d9ff"
+}
+
+function changeToSunsetTheme() {
+    let wrapper = document.getElementById("wrapper");
+    let title = document.getElementById("header");
+    let button = document.getElementById("button");
+    wrapper.style.backgroundColor = "#DF688A"
+    wrapper.style.borderColor = "#9C2C60"
+    wrapper.style.color = "#5B1A38"
+    title.style.color = "#5B1A38"
+    button.style.backgroundColor = "#9C2C60"
+}
+
+function changeToSunRiseTheme() {
+    let wrapper = document.getElementById("wrapper");
+    let title = document.getElementById("header");
+    let button = document.getElementById("button");
+    wrapper.style.backgroundColor = "#E3CEFA"
+    wrapper.style.borderColor = "#9134FA"
+    wrapper.style.color = "#572095"
+    title.style.color = "#572095"
+    button.style.backgroundColor = "#9134FA"
+}
+
 inputField.addEventListener("keyup", e => {
     if (e.key == "Enter" && inputField.value != "") {
         requestApi(inputField.value)
