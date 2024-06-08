@@ -1,0 +1,23 @@
+{
+  "name": "team-lab-4",
+  "version": "1.0.0",
+  "description": "WeatherApp is a simple application that provides current weather information and dynamically adjusts its design based on the weather conditions. With WeatherApp, users can easily input their desired location manually and retrieve the weather forecast for that area. The app boasts a straightforward interface for seamless navigation and intuitive usage.",
+  "main": "script.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Farid545/Team-Lab-4.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Farid545/Team-Lab-4/issues"
+  },
+  "homepage": "https://github.com/Farid545/Team-Lab-4#readme",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jsdom": "^24.1.0"
+  }
+}
